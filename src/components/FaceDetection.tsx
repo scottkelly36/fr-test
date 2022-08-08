@@ -48,7 +48,10 @@ const FaceDetection = () => {
             setAngry(detections?.expressions.angry);
             setHappy(detections?.expressions.happy);
             const sortedArray = detections?.expressions.asSortedArray();
-            setOrderedEmotions(sortedArray[0].expression);
+            if(sortedArray.length > 0 ){
+                setOrderedEmotions(sortedArray[0].expression);
+            }
+            
             
         },5000)
     }
